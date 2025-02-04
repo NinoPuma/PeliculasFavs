@@ -10,39 +10,51 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="70dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/txtNuevoDato"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
         android:orientation="horizontal">
 
         <EditText
             android:id="@+id/txtAgregar"
-            android:layout_width="220dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
+            android:layout_width="268dp"
+            android:layout_height="match_parent" />
 
         <Button
             android:id="@+id/btnAgregar"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:backgroundTint="#30A827"
             android:text="Agregar" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="70dp"
         android:orientation="horizontal">
 
         <EditText
             android:id="@+id/txtCargar"
-            android:layout_width="220dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
+            android:layout_width="270dp"
+            android:layout_height="match_parent" />
 
         <Button
             android:id="@+id/btnCargar"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:backgroundTint="#30A827"
             android:text="Cargar" />
     </LinearLayout>
 </LinearLayout>
