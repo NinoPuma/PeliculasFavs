@@ -14,7 +14,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-    public EditText txtAgregar, txtCargar;
+    public EditText txtAgregar, txtCargar, txtNuevoDato;
     public Button btnAgregar, btnCargar;
     public SharedPreferences sharedPreferences;
 
@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
-
+        txtNuevoDato = findViewById(R.id.txtNuevoDato);
         txtAgregar = findViewById(R.id.txtAgregar);
         txtCargar = findViewById(R.id.txtCargar);
         btnAgregar = findViewById(R.id.btnAgregar);
