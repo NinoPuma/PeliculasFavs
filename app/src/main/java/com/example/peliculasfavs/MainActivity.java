@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
         txtNuevoDato = findViewById(R.id.txtNuevoDato);
         txtAgregar = findViewById(R.id.txtAgregar);
         txtCargar = findViewById(R.id.txtCargar);
@@ -39,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
         btnAgregar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String fileName = txtNuevoDato.getText().toString();
+                sharedPreferences = getSharedPreferences(fileName, MODE_PRIVATE);
                 String key = txtAgregar.getText().toString();
                 String value = txtCargar.getText().toString();
                 SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -50,8 +51,13 @@ public class MainActivity extends AppCompatActivity {
         btnCargar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String fileName = txtNuevoDato.getText().toString();
+                sharedPreferences = getSharedPreferences(fileName, MODE_PRIVATE);
                 String key = txtAgregar.getText().toString();
-                String value = sharedPreferences.getString(key, "No encontrado");
+                String value = sharedPreferences.getString(key, "las dos torres");
+                if (value.equals("I am Error")) {
+                    Toast.makeText(MainActivity.this, "Error: Película No Encontrada", Toast.LENGTH_SHORT).show();
+                }
                 txtCargar.setText(value);
             }
         });
